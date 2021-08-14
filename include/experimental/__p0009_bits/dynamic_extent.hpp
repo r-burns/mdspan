@@ -56,12 +56,12 @@ _MDSPAN_INLINE_VARIABLE constexpr auto dynamic_extent = std::numeric_limits<size
 namespace detail {
 
 template <class>
-constexpr auto __make_dynamic_extent() {
+constexpr auto __make_dynamic_extent() -> decltype(dynamic_extent) {
   return dynamic_extent;
 }
 
 template <size_t>
-constexpr auto __make_dynamic_extent_integral() {
+constexpr auto __make_dynamic_extent_integral() -> decltype(dynamic_extent) {
   return dynamic_extent;
 }
 
