@@ -398,9 +398,6 @@ struct __is_extents : ::std::false_type {};
 template <size_t... ExtentsPack>
 struct __is_extents<::std::experimental::extents<ExtentsPack...>> : ::std::true_type {};
 
-template <class T>
-static constexpr bool __is_extents_v = __is_extents<T>::value;
-
 
 template <typename Extents>
 struct __extents_to_partially_static_sizes;

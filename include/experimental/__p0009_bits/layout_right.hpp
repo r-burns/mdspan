@@ -72,7 +72,7 @@ struct layout_right {
   {
   private:
 
-    static_assert(detail::__is_extents_v<Extents>, "std::experimental::layout_left::mapping must be instantiated with a specialization of std::experimental::extents.");
+    static_assert(detail::__is_extents<Extents>::value, "std::experimental::layout_left::mapping must be instantiated with a specialization of std::experimental::extents.");
 
     using base_t = detail::fixed_layout_common_impl<Extents, make_index_sequence<Extents::rank()>, detail::layout_right_idx_conditional>;
 

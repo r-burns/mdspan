@@ -75,7 +75,7 @@ struct layout_stride {
   {
   public:
     // This could be a `requires`, but I think it's better and clearer as a `static_assert`.
-    static_assert(detail::__is_extents_v<Extents>, "std::experimental::layout_stride::mapping must be instantiated with a specialization of std::experimental::extents.");
+    static_assert(detail::__is_extents<Extents>::value, "std::experimental::layout_stride::mapping must be instantiated with a specialization of std::experimental::extents.");
 
     using extents_type = Extents;
 

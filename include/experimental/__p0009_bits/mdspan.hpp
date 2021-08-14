@@ -62,7 +62,7 @@ template <
 class mdspan
 {
 private:
-  static_assert(detail::__is_extents_v<Extents>, "std::experimental::mdspan's Extents template parameter must be a specialization of std::experimental::extents.");
+  static_assert(detail::__is_extents<Extents>::value, "std::experimental::mdspan's Extents template parameter must be a specialization of std::experimental::extents.");
 
   // Workaround for non-deducibility of the index sequence template parameter if it's given at the top level
   template <class>
